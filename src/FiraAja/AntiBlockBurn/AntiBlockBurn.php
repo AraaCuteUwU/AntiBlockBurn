@@ -5,12 +5,8 @@ namespace FiraAja\AntiBlockBurn;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\block\BlockBurnEvent;
-use pocketmine\utils\Config;
 
 class AntiBlockBurn extends PluginBase implements Listener {
-	
-	/** @var Config */
-	private Config $getConfig;
 	
 	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
