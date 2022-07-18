@@ -14,12 +14,12 @@ class AntiBlockBurn extends PluginBase implements Listener {
 	}
 	
 	public function onBurn(BlockBurnEvent $event){
-		$player = $event->getPlayer();
+		$block = $event->getBlock();
 		if(empty($this->getConfig()->get("antiburn-worlds", []))){
 			$event->cancel();
 		}else{
 			foreach($this->getConfig()->getAll() as $key){
-				$from = $player->getWorld()->getFolderName();
+				$from = $block->getWorld()->getFolderName();
 				if($key == $from){
 					$event->cancel();
 				}
