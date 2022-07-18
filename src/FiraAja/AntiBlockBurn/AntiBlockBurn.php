@@ -19,7 +19,7 @@ class AntiBlockBurn extends PluginBase implements Listener {
 			$event->cancel();
 		}else{
 			foreach($this->getConfig()->getAll() as $key){
-				$from = $block->position->getWorld()->getFolderName();
+				$from = $block->getPosition()->getWorld()->getFolderName();
 				if($key == $from){
 					$event->cancel();
 				}
